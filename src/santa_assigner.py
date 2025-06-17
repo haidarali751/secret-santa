@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 from typing import Optional, Dict, List, Tuple
-from .exceptions import AssignmentError, InputFileError, ValidationError
+from exceptions import AssignmentError, InputFileError, ValidationError
 
 
 class SantaAssigner:

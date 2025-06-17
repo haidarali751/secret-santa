@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from src.santa_assigner import SantaAssigner
-from src.exceptions import SecretSantaError
+from santa_assigner import SantaAssigner
+from exceptions import SecretSantaError
 
 def validate_csv_columns(df, required_columns, file_type):
     missing_columns = [col for col in required_columns if col not in df.columns]
@@ -146,4 +146,9 @@ def main():
         """)
 
 if __name__ == "__main__":
+    import os
+    import sys
+    # Add the src directory to the Python path if running directly
+    if os.path.abspath(os.path.dirname(__file__)) not in sys.path:
+        sys.path.append(os.path.abspath(os.path.dirname(__file__)))
     main() 
