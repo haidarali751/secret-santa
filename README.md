@@ -58,7 +58,15 @@ The previous year's assignments CSV file should contain:
 ### Running the Program
 
 ```bash
-python src/main.py --input employees.csv --previous previous_year.csv --output assignments.csv
+python -m src.main --input data/employees.csv --previous data/previous_assignments.csv --output data/new_assignments.csv
+```
+
+After Running this command you can see the new file generated in /data folder.
+
+Like below you can add dynamic path too.
+
+```bash
+python -m src.main --input <Input data list file path> --previous <Previous data list file path> --output <Output data list file path>
 ```
 
 ### Running Tests
@@ -67,10 +75,22 @@ python src/main.py --input employees.csv --previous previous_year.csv --output a
 pytest tests/
 ```
 
+### You can also view your Streamlit app in your browser.
+```bash   
+streamlit run src/app.py
+```
+
+If you get any error related to module when trying to run streamlit command then you can fix it using below command.
+```bash
+pip install -e .
+```
 ## Project Structure
 
 ```
 secret-santa/
+├── data/
+│   ├── employees.csv
+│   ├── previous_assignments.csv
 ├── src/
 │   ├── __init__.py
 │   ├── main.py
@@ -81,6 +101,8 @@ secret-santa/
 │   ├── test_santa_assigner.py
 │   └── test_data/
 ├── requirements.txt
+├── .gitignore
+├── setup.py
 └── README.md
 ```
 
@@ -91,11 +113,3 @@ The system handles various error cases including:
 - Malformed CSV files
 - Invalid employee data
 - Impossible assignment scenarios
-
-## Contributing
-
-Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
