@@ -76,6 +76,10 @@ secret-santa/
 │   ├── main.py
 │   ├── santa_assigner.py
 │   └── exceptions.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_santa_assigner.py
+│   └── test_data/
 ├── requirements.txt
 └── README.md
 ```
